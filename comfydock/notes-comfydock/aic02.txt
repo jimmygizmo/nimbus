@@ -1,0 +1,23 @@
+Explanation:
+Version: We are using version 3.8 of Docker Compose.
+Services:
+comfyui: This is the main ComfyUI service.
+Build Context: This points to the current directory . and the Dockerfile within the project.
+Ports: Exposes port 8188 on the host machine for the ComfyUI web interface.
+Volumes: Mounts a local directory ./comfyui_data to the container's /opt/comfyui/data for persistent data.
+Restart Policy: Ensures the container will restart automatically on failure.
+Runtime: Specifies the use of NVIDIA runtime for GPU acceleration.
+Network: Connects to the comfyui_network network for communication between services.
+comfyui-manager: This service is for managing ComfyUI.
+Depends on ComfyUI: It starts only after the comfyui service is up and running.
+Ports: Exposes port 8189 on the host machine for the ComfyUI Manager web interface.
+Other configurations are similar to comfyui.
+Networks: We define a comfyui_network using the default bridge driver to allow the services to communicate.
+Volumes: comfyui_data is a named volume to persist ComfyUI-related data.
+Running the Services:
+Place this docker-compose.yml file alongside your Dockerfile.
+Run docker-compose up --build to build and start the containers.
+Access the ComfyUI web interface at http://localhost:8188.
+Access the ComfyUI Manager at http://localhost:8189.
+This setup should provide you with a scalable and easily manageable environment for running ComfyUI with Docker Compose!
+

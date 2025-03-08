@@ -1,0 +1,17 @@
+
+Running ComfyUI on RunPod
+
+RyanOnTheInside
+
+
+https://www.youtube.com/watch?v=5hCGDcfPy8Y
+
+
+His node pack:
+
+https://github.com/ryanontheinside/ComfyUI_RyanOnTheInside
+
+and his CivitAI page
+
+https://civitai.com/user/ryanontheinside
+

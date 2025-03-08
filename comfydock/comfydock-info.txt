@@ -1,0 +1,24 @@
+
+Dockerfile notes:
+
+CUDA 12.4 and cuDNN 9
+
+Clones ComfyUI and Manager repo.
+
+/opt/comfyui
+
+Port 8188
+
+Use entrypoint.sh or uncomment the CMD
+
+Listen on 0.0.0.0
+
+
+================================================
+
+Compose notes:
+
+version 3.8
+
+port 8188
+

@@ -1,0 +1,49 @@
+
+# Use the official PyTorch image with CUDA support
+FROM pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime
+
+# Install essential dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    sudo \
+    && apt-get clean
+
+# Clone the latest ComfyUI repository
+RUN git clone https://github.com/comfyanonymous/ComfyUI.git /opt/comfyui && \
+    cd /opt/comfyui && \
+    git checkout tags/v0.3.7
+
+# Clone the ComfyUI Manager repository
+RUN git clone https://github.com/ltdrdata/ComfyUI-Manager.git /opt/comfyui-manager && \
+    cd /opt/comfyui-manager && \
+    git checkout tags/2.55.5
+
+# Install Python dependencies for both ComfyUI and ComfyUI Manager
+RUN pip install --no-cache-dir \
+    -r /opt/comfyui/requirements.txt \
+    -r /opt/comfyui-manager/requirements.txt
+
+# Set the working directory to ComfyUI
+WORKDIR /opt/comfyui
+
+# Expose the default port
+EXPOSE 8188
+
+# Add the entrypoint script to handle container startup
+#COPY entrypoint.sh /entrypoint.sh
+#RUN chmod +x /entrypoint.sh
+
+# Set the entrypoint to the startup script
+#ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
+
+# Command to run ComfyUI
+CMD ["/opt/conda/bin/python", "main.py", "--listen", "0.0.0.0", "--port", "8188", "--disable-auto-launch"]
+
+
+# TODO: UPDATE: This is proven to work fine. No workflows run yet. No models. Does not have manager.
+# Ran via the compose file.
+
+
+##
+#
+

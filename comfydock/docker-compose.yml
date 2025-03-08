@@ -1,0 +1,52 @@
+
+version: '3.8'
+
+services:
+  comfyui:
+    build:
+      context: .
+      dockerfile: DockerfilePT124
+    container_name: comfyui
+    ports:
+      - "8188:8188"
+    environment:
+      - TZ=UTC
+    volumes:
+      - ./comfydata:/opt/comfyui/data
+    restart: always
+    runtime: nvidia
+    networks:
+      - comfyui_network
+    stdin_open: true
+    tty: true
+
+#  comfyui-manager:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    container_name: comfyui-manager
+#    depends_on:
+#      - comfyui
+#    ports:
+#      - "8189:8189"
+#    environment:
+#      - TZ=UTC
+#    restart: always
+#    runtime: nvidia
+#    networks:
+#      - comfyui_network
+#    stdin_open: true
+#    tty: true
+
+networks:
+  comfyui_network:
+    driver: bridge
+
+volumes:
+  comfyui_data:
+    driver: local
+
+
+##
+#
+

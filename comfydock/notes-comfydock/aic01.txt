@@ -1,0 +1,30 @@
+
+ChatGPT designed dockerfile for ComfyUI on RunPod - prompt 1, unproven - But sort of matches what I'm actually getting
+running from a video.
+
+
+Explanation:
+
+Base Image: The Dockerfile starts with the official PyTorch image that includes CUDA 12.4 and cuDNN 9, ensuring GPU acceleration support.
+
+Dependencies Installation: It updates the package lists and installs essential tools like git and sudo.
+
+Repository Cloning: It clones the latest versions of the ComfyUI and ComfyUI Manager repositories from GitHub.
+
+Python Dependencies: Installs the required Python packages for both ComfyUI and ComfyUI Manager.
+
+Working Directory: Sets /opt/comfyui as the working directory where ComfyUI is located.
+
+Port Exposure: Exposes port 8188, which is the default port for accessing the ComfyUI web interface.
+
+Entrypoint Script: Copies and sets permissions for the entrypoint.sh script, which manages the container's startup process.
+
+Startup Command: Specifies the command to run ComfyUI, listening on all network interfaces (0.0.0.0) on port 8188, and disables automatic browser launch.
+
+Note: Ensure that the entrypoint.sh script is present in your build context and contains the necessary startup instructions. If you don't have a custom entrypoint.sh, you can remove the related lines, and Docker will use the default command specified in CMD.
+
+This Dockerfile provides a streamlined setup for running ComfyUI with GPU support, leveraging the latest versions of the required repositories and dependencies.
+
+For more information and alternative configurations, you can refer to the official ComfyUI Docker repository:
+GITHUB.COM
+
