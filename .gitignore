@@ -6,10 +6,10 @@ comfydata/*
 !comfydata/.gitkeep
 
 
-#nogit/*
+nogit/*
 !nogit/.gitkeep
 
-#nogit/cosmos/*
+nogit/cosmos/*
 !nogit/cosmos/.gitkeep
 
 # ComfyUI/models/text_encoders/oldt5_xxl_fp8_e4m3fn_scaled.safetensors    4.9 GB
