@@ -1,11 +1,32 @@
 
-Running ComfyUI on RunPod
+Running ComfyUI on RunPod - Storage Volume Deployment - Self-Install on top of a CUDA/PyTorch-ready Ubuntu Pod
+
+Jupyter is your main (initial) interface into the Pod/VM/env.
+Then, your app runs against a unique/session-only VM hostname on port 8188 for Comfy.
+Simple. A great way to run things and maintain most of your setup along with your work on storage volumes.
+Drawbacks? Storage volumes are liked to datacenters and GPU availability varies so you might find yourself creating
+additional storage volumes in different datacenters and having to move your work around, which is not so bad.
+I like the storage volume method and have now done plenty work with it, so next I move on to Serverless and
+building and deploying container (Docker) images which is also a different but very very awesome deployment model.
+
+---------
 
 RyanOnTheInside
-
+(He's a pretty cool dude!)
 
 https://www.youtube.com/watch?v=5hCGDcfPy8Y
 
+His installer script for Comfy, Manager and his Node Pack.
+(It works nicely .. but you have to convert all the CR/LF in it to just LF.
+You'll know if you try to run it before that! It will give some ugly errors.
+Convert it to all LF .. Unix/Linux text-file format.)
+https://gist.github.com/ryanontheinside/de11904826ee863c6e3ea2f3dc2ae90c
+Actually this makes directories and installs everything. Verified: Comfy runs great.
+
+----------
+
+
+RELATED:
 
 His node pack:
 
@@ -14,4 +35,7 @@ https://github.com/ryanontheinside/ComfyUI_RyanOnTheInside
 and his CivitAI page
 
 https://civitai.com/user/ryanontheinside
+
+
+
 

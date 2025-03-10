@@ -1,0 +1,37 @@
+
+
+RunPod Stable Diffusion, Serverless Complete Tutorial
+YouTube Tutorial: https://youtu.be/ojwEOdj7iUI
+
+REPO:
+clone https://github.com/generativelabs/worker-a1111.git
+
+Postman config: postman-config-runpod-serverless.json
+
+Read my "Lessons Learned - RunPod Serverless" Blog Post
+
+Trouble Shooting
+
+On Mac, if you run into "gcc" missing error, add: --platform linux/amd64 to docker build command
+
+===============================================================
+sd3.5_large.safetensors
+
+* This model is pretty new and the tut repo a1111 is 2 years ++ old now, so hopefully we have version compat.
+If not, I'll use an older SD model because the priority is the deployment, not to have the latest SD model.
+Note this file is about 17 GB download.
+
+====================================================================
+
+When possibly looking for custom SD 2.1 models, in case 3.% is too new for the above repo's version of A1111:
+
+SD 2.1 REPO:
+https://github.com/Stability-AI/stablediffusion
+
+Model card:
+https://huggingface.co/stabilityai/stable-diffusion-2-1
+
+v2-1_768-ema-pruned.safetensors
+5.2 GB Download
+* This is the one I will use. The pruned version is recommendded for generation. The non-pruned might be best for training.
+

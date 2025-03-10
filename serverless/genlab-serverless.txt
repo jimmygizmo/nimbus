@@ -9,11 +9,11 @@ https://generativelabs.co/helpers
 
 
 
-
-
-
 RunPod Serverless, Network Volumes, Step-by-Step
 https://www.youtube.com/watch?v=b_5jkvMpd_k
+
+CHECK THESE GCP DOCS - RELATED TOPIC:
+https://cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance
 
 
 
